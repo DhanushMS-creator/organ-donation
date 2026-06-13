@@ -39,3 +39,5 @@ pytest-cov==4.1.0
 
 # Utilities
 python-slugify==8.0.1
+gunicorn==21.2.0
+
