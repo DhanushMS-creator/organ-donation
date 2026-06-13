@@ -46,3 +46,7 @@ config/secrets.json
 *.pem
 *.key
 *.crt
+
+# Node
+node_modules/
+
