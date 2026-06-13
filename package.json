@@ -1,0 +1,34 @@
+{
+  "name": "organ-donation-platform",
+  "version": "1.0.0",
+  "description": "Centralized smart application for organ donation coordination",
+  "main": "index.js",
+  "scripts": {
+    "start": "sh -c 'if [ -x venv/bin/python ]; then exec venv/bin/python backend/app.py; elif [ -x .venv/bin/python ]; then exec .venv/bin/python backend/app.py; else exec python3 backend/app.py; fi'",
+    "frontend": "npm --prefix frontend-react run dev -- --host 127.0.0.1",
+    "dev:all": "bash scripts/dev-all.sh",
+    "test": "pytest tests/",
+    "dev": "sh -c 'if [ -x venv/bin/python ]; then exec venv/bin/python backend/app.py --debug; elif [ -x .venv/bin/python ]; then exec .venv/bin/python backend/app.py --debug; else exec python3 backend/app.py --debug; fi'",
+    "init-db": "sh -c 'if [ -x venv/bin/python ]; then exec venv/bin/python backend/init_db.py; elif [ -x .venv/bin/python ]; then exec .venv/bin/python backend/init_db.py; else exec python3 backend/init_db.py; fi'"
+  },
+  "keywords": [
+    "organ-donation",
+    "healthcare",
+    "transplant",
+    "medical"
+  ],
+  "author": "",
+  "license": "PROPRIETARY",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.6.3"
+  }
+}
