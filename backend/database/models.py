@@ -410,6 +410,8 @@ class DonorAvailability(Base):
 
 def get_engine(database_url='sqlite:///organ_donation.db'):
     """Create database engine"""
+    if database_url and database_url.startswith("postgres://"):
+        database_url = database_url.replace("postgres://", "postgresql://", 1)
     return create_engine(database_url, echo=False)
 
 
