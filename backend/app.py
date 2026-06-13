@@ -735,8 +735,97 @@ routes_db: List[TransportRoute] = []
 
 
 # =====================
-# Health Check Endpoint
+# Root & Health Check Endpoints
 # =====================
+
+@app.route('/', methods=['GET'])
+def index():
+    """Root route returning a friendly HTML welcome page"""
+    return """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organ Donation Coordination API</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: radial-gradient(circle at top right, #1a1b2f, #0d0e15);
+            color: #f3f4f6;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 48px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            animation: fadeIn 1s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .status-badge {
+            background: linear-gradient(135deg, #00f2fe, #4facfe);
+            color: #0d0e15;
+            font-weight: 800;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 15px rgba(0, 242, 254, 0.4);
+        }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin: 0 0 16px 0;
+            background: linear-gradient(135deg, #ffffff, #9ca3af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        p {
+            color: #9ca3af;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 0 0 16px 0;
+        }
+        .pulse {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #00f2fe;
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: pulse-animation 1.5s infinite;
+        }
+        @keyframes pulse-animation {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0, 242, 254, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 242, 254, 0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="status-badge"><span class="pulse"></span>Online</span>
+        <h1>Organ Donation API</h1>
+        <p>The backend services for Organ Donation Coordination Platform are active and connected to Neon Database.</p>
+    </div>
+</body>
+</html>"""
+
 
 @app.route('/health', methods=['GET'])
 def health_check():
