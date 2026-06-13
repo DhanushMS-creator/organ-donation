@@ -1,0 +1,43 @@
+# Core Framework
+Flask==3.0.0
+Flask-CORS==4.0.0
+Flask-SQLAlchemy==3.1.1
+Flask-Migrate==4.0.5
+
+# Database
+psycopg2-binary==2.9.9
+SQLAlchemy==2.0.23
+GeoAlchemy2==0.14.2
+
+# Data Validation & Serialization
+pydantic==2.5.3
+marshmallow==3.20.1
+
+# Geospatial & Routing
+geopy==2.4.1
+haversine==2.8.1
+
+# Security & Encryption
+cryptography==41.0.7
+PyJWT==2.8.0
+bcrypt==4.1.2
+
+# API & Communication
+requests==2.31.0
+python-dotenv==1.0.0
+
+# Date & Time
+python-dateutil==2.8.2
+
+# Data Export
+pandas==2.1.4
+openpyxl==3.1.2
+
+# Testing
+pytest==7.4.3
+pytest-cov==4.1.0
+
+# Utilities
+python-slugify==8.0.1
+gunicorn==21.2.0
+
