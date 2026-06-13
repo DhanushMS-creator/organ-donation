@@ -50,3 +50,9 @@ config/secrets.json
 # Node
 node_modules/
 
+# Agent/Developer Files
+.agents/
+.neon
+skills-lock.json
+
+
